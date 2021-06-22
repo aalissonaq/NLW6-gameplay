@@ -10,11 +10,11 @@ type Props = {
 }
 
 export function Avatar({ urlImage }: Props) {
-  const { secondary50, secondary70 } = theme.colors;
+  const { primary, secondary50 } = theme.colors;
   return (
     <LinearGradient
       style={styles.container}
-      colors={[secondary50, secondary70]}
+      colors={[primary, secondary50]}
     >
       <Image
         source={{ uri: urlImage }}

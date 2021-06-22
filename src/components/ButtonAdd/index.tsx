@@ -15,7 +15,7 @@ export function ButtonAdd({ ...rest }: RectButtonProps) {
       <MaterialCommunityIcons
         name='plus'
         color={theme.colors.heading}
-        size={24}
+        size={32}
       />
 
     </RectButton>
