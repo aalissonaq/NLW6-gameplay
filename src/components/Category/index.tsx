@@ -12,11 +12,13 @@ import { theme } from '../../global/styles/theme';
 type Props = RectButtonProps & {
   title: string;
   icon: React.FC<SvgProps>;
+  hasCheckBox: boolean;
   checked: boolean;
 }
 export function Category({
   title,
   icon: Icon,
+  hasCheckBox = false,
   checked = false,
   ...rest
 }: Props) {
@@ -30,10 +32,12 @@ export function Category({
         colors={[secondary50, secondary70]}
       >
         <LinearGradient
-          style={[styles.content, { opacity: checked ? 1 : 0.4 }]}
+          style={[styles.content, { opacity: checked ? 1 : 0.5 }]}
           colors={[checked ? secondary75 : secondary50, secondary40]}
         >
-          <View style={checked ? styles.checked : styles.check} />
+          {hasCheckBox &&
+            <View style={checked ? styles.checked : styles.check} />
+          }
           <Icon
             width={48}
             height={48}
