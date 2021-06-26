@@ -11,10 +11,12 @@ import { theme } from '../../global/styles/theme';
 type Props = {
   categorySelect: string,
   setCategory: (categoryId: string) => void;
+  hasCheckBox?: boolean;
 }
 export function CategorySelect({
   categorySelect,
-  setCategory
+  setCategory,
+  hasCheckBox = false,
 }: Props) {
   return (
     <ScrollView
@@ -30,6 +32,7 @@ export function CategorySelect({
           icon={category.icon}
           checked={category.id === categorySelect}
           onPress={() => setCategory(category.id)}
+          hasCheckBox={hasCheckBox}
         />
       ))
       }
